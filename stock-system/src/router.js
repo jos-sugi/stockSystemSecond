@@ -5,16 +5,20 @@ import Users from "./views/Users.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const routes = [
+    {
+        path: "/",
+        component: Home,
+    },
+    {
+        path: "/users",
+        component: Users,
+    },
+];
+
+const router = new Router({
     mode: "history",
-    routes: [
-        {
-            path: "/",
-            component: Home,
-        },
-        {
-            path: "/users",
-            component: Users,
-        },
-    ],
+    routes,
 });
+
+export default router;
