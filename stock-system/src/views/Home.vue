@@ -1,14 +1,25 @@
 <template>
     <div>
         <h3>Home</h3>
-        <v-btn @click="screenTransition">push</v-btn>
+        <v-btn @click="screenTransition('home')">push</v-btn>
+        <router-link to="/">push</router-link>
+
+        <v-btn @click="screenTransition('users')">push</v-btn>
+        <router-link to="/users">push</router-link>
     </div>
 </template>
 <script>
 export default {
     methods: {
-        screenTransition: function () {
-            this.$router.push({ name: "Users" });
+        screenTransition(value) {
+            switch (value) {
+                case "users":
+                    this.$router.push({ name: "Users" });
+                    break;
+                case "home":
+                    this.$router.push({ name: "Home" });
+                    break;
+            }
         },
     },
 };
