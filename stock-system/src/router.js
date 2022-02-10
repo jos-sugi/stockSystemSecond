@@ -9,10 +9,14 @@ const routes = [
     {
         path: "/",
         component: Home,
+        name: "Home",
+        meta: { title: "Home", description: "ホーム画面" },
     },
     {
         path: "/users",
+        name: "Users",
         component: Users,
+        meta: { title: "User", description: "ユーザー画面" },
     },
 ];
 
